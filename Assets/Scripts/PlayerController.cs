@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     private bool r, l;
     private bool check = true;
     public float rot;
-    public Avatar avatar1, avatar2;
-    public GameObject a1, a2;
+    public Avatar avatar1, avatar2, avatar3;
+    public GameObject a1, a2, a3;
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
@@ -118,6 +118,7 @@ void Start()
             anim.avatar = avatar1;
             a1.SetActive(true);
             a2.SetActive(false);
+            a3.SetActive(false);
         }
         if (score >= 7 && score <= 12)
         {
@@ -127,12 +128,17 @@ void Start()
             anim.avatar = avatar2;
             a1.SetActive(false);
             a2.SetActive(true);
+            a3.SetActive(false);
         }
         if (score > 12)
         {
             t.color = Color.green;
             t.text = "rich";
             fill.color = Color.green;
+            anim.avatar = avatar3;
+            a1.SetActive(false);
+            a2.SetActive(false);
+            a3.SetActive(true);
         }
         if (score > 20)
         {
